@@ -1,6 +1,6 @@
-package christianfelps.rest_with_spring_boot_and_java_erudio.Controllers;
+package br.com.christianfelps.Controllers;
 
-import christianfelps.rest_with_spring_boot_and_java_erudio.model.Greeting;
+import br.com.christianfelps.model.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

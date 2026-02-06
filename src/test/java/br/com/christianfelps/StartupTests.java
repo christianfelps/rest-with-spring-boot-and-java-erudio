@@ -1,4 +1,4 @@
-package christianfelps.rest_with_spring_boot_and_java_erudio;
+package br.com.christianfelps;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
