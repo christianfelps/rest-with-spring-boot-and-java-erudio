@@ -1,13 +1,9 @@
-package br.com.christianfelps.service;
+package br.com.christianfelps.request.converters;
 
 import br.com.christianfelps.exception.UnsupportedMathOperationException;
 
-public class MathService {
-
-    public void validationIsNumeric(String numberOne, String numberTwo){
-        validationIsNumeric(numberOne);
-        validationIsNumeric(numberTwo);
-    }public static double convertToDouble(String strNumber) throws IllegalArgumentException {
+public class NumberConverter {
+    public static double convertToDouble(String strNumber) throws IllegalArgumentException {
         if (strNumber == null || strNumber.isEmpty())
             throw new UnsupportedMathOperationException("Please set a numeric value!");
         String number = strNumber.replace(",", ".");
@@ -18,10 +14,4 @@ public class MathService {
         String number = strNumber.replace(",", ".");
         return (number.matches("[-+]?[0-9]*\\.?[0-9]+"));
     }
-    public void validationIsNumeric(String numberOne){
-        if(!isNumeric(numberOne))
-            throw new UnsupportedMathOperationException("Please set a numeric value!");
-    }
-
-
 }
