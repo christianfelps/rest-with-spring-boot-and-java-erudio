@@ -1,13 +1,13 @@
 package br.com.christianfelps.Controllers;
 
-import br.com.christianfelps.data.dto.v1.PersonDTO;
-import br.com.christianfelps.data.dto.v2.PersonDTOV2;
+import br.com.christianfelps.data.dto.PersonDTO;
 import br.com.christianfelps.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -21,7 +21,10 @@ public class personController {
     @GetMapping(value = "/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public PersonDTO findById(@PathVariable("id") Long id) {
-        return service.findById(id);
+        var person = service.findById(id);
+        person.setBirthDay(new Date());
+
+        return person;
     }
 
     //Buscar todos
@@ -38,13 +41,7 @@ public class personController {
     public PersonDTO create(@RequestBody PersonDTO person) {
         return service.create(person);
     }
-    //Criar pessoa V2
-    @PostMapping( value = "/v2",
-            consumes = MediaType.APPLICATION_JSON_VALUE,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public PersonDTOV2 createV2(@RequestBody PersonDTOV2 person) {
-        return service.createV2(person);
-    }
+
 
 
     //Atualizar pessoa
