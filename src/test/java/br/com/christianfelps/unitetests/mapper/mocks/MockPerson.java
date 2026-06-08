@@ -3,7 +3,7 @@ package br.com.christianfelps.unitetests.mapper.mocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.christianfelps.data.dto.v1.PersonDTO;
+import br.com.christianfelps.data.dto.PersonDTO;
 import br.com.christianfelps.model.Person;
 
 public class MockPerson {

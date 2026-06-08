@@ -1,7 +1,6 @@
 package br.com.christianfelps.service;
 
-import br.com.christianfelps.data.dto.v1.PersonDTO;
-import br.com.christianfelps.data.dto.v2.PersonDTOV2;
+import br.com.christianfelps.data.dto.PersonDTO;
 import br.com.christianfelps.exception.ResourceNotFoundException;
 import br.com.christianfelps.mapper.custom.PersonMapper;
 import br.com.christianfelps.model.Person;
@@ -49,11 +48,6 @@ public class PersonService {
         return parseObject(repository.save(entity), PersonDTO.class);
     }
 
-    public PersonDTOV2 createV2 (PersonDTOV2 person) {
-        logger.info("Creating a new person V2!");
-        var entity = converter.convertDTOToEntity(person);
-        return converter.convertEntityToDTO(repository.save(entity));
-    }
 
     public PersonDTO update (PersonDTO person) {
         logger.info("Updating a new person");
