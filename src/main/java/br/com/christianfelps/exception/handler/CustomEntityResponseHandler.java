@@ -1,7 +1,8 @@
 package br.com.christianfelps.exception.handler;
 
 import br.com.christianfelps.exception.ExceptionResponse;
-import br.com.christianfelps.exception.ResourceNotFoundException;
+import br.com.christianfelps.exception.RequiredObjectIsNullException;
+import br.com.christianfelps.exception.ResourceNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -22,11 +23,18 @@ public class CustomEntityResponseHandler extends ResponseEntityExceptionHandler 
                 request.getDescription(false));
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-    @ExceptionHandler(ResourceNotFoundException.class)
+    @ExceptionHandler(ResourceNotFound.class)
     public final ResponseEntity<ExceptionResponse> handleNotFoundExceptions(Exception ex, WebRequest request) {
         ExceptionResponse response = new ExceptionResponse(new Date(),
                 ex.getMessage(),
                 request.getDescription(false));
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+    @ExceptionHandler(RequiredObjectIsNullException.class)
+    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request) {
+        ExceptionResponse response = new ExceptionResponse(new Date(),
+                ex.getMessage(),
+                request.getDescription(false));
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

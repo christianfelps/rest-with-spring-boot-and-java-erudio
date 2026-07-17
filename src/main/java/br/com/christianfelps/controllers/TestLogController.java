@@ -1,4 +1,4 @@
-package br.com.christianfelps.Controllers;
+package br.com.christianfelps.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
