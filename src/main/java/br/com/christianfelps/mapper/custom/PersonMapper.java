@@ -15,6 +15,7 @@ public class PersonMapper {
         dto.setLastName(person.getLastName());
         dto.setAddress(person.getAddress());
         dto.setGender(person.getGender());
+        dto.setEnabled(person.getEnabled());
         return dto;
     }
     public Person convertDTOToEntity (PersonDTO person) {
@@ -24,7 +25,7 @@ public class PersonMapper {
         entity.setLastName(person.getLastName());
         entity.setAddress(person.getAddress());
         entity.setGender(person.getGender());
-        // entity.setBirthDay(new Date());
+        entity.setEnabled(person.getEnabled());
         return entity;
     }
 }

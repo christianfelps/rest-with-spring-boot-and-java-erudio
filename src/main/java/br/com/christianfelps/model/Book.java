@@ -1,13 +1,12 @@
 package br.com.christianfelps.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
-
+@Entity
+@Table(name = "books")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,13 +15,14 @@ public class Book {
     @Column(name = "title", nullable = false, length = 100)
     private String title;
 
-    @Column(name = "author", nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String author;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "launch_date", nullable = false)
-    private LocalDate launchDate;
+    private Date launchDate;
 
-    @Column(name = "price", nullable = false)
+    @Column(nullable = false)
     private double price;
 
     public Book() {}
@@ -51,11 +51,11 @@ public class Book {
         this.author = author;
     }
 
-    public LocalDate getLaunchDate() {
+    public Date getLaunchDate() {
         return launchDate;
     }
 
-    public void setLaunchDate(LocalDate launchDate) {
+    public void setLaunchDate(Date launchDate) {
         this.launchDate = launchDate;
     }
 

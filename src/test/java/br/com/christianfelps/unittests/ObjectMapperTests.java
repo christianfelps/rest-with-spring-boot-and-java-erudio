@@ -1,4 +1,4 @@
-package br.com.christianfelps.unitetests;
+package br.com.christianfelps.unittests;
 import static br.com.christianfelps.mapper.ObjectMapper.parseObject;
 import static br.com.christianfelps.mapper.ObjectMapper.parseListObjects;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import br.com.christianfelps.data.dto.PersonDTO;
-import br.com.christianfelps.unitetests.mapper.mocks.MockPerson;
+import br.com.christianfelps.unittests.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

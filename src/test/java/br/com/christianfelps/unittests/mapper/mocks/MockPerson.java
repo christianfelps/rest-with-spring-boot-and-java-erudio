@@ -1,4 +1,4 @@
-package br.com.christianfelps.unitetests.mapper.mocks;
+package br.com.christianfelps.unittests.mapper.mocks;
 
 import java.util.ArrayList;
 import java.util.List;

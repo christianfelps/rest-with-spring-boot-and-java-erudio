@@ -1,40 +1,22 @@
-package br.com.christianfelps.model;
-
-import jakarta.persistence.*;
+package br.com.christianfelps.integrationtests.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
 
-@Entity
-@Table(name = "person")
-public class Person implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class PersonDTO implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "first_name", nullable = false, length = 80)
     private String firstName;
-
-    @Column(name = "last_name", nullable = false, length = 80)
     private String lastName;
-
-    @Column(name = "address", nullable = false, length = 100)
     private String address;
-
-    @Column(name = "gender", nullable = false, length = 6)
     private String gender;
-
-    @Column(name = "enabled", nullable = false)
     private Boolean enabled;
 
 
-    private final static AtomicLong counter = new AtomicLong();
 
 
-    public Person() {}
+
+    public PersonDTO() {}
 
     public Long getId() {
         return id;
@@ -87,8 +69,8 @@ public class Person implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(getId(), person.getId()) && Objects.equals(getFirstName(), person.getFirstName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getAddress(), person.getAddress()) && Objects.equals(getGender(), person.getGender()) && Objects.equals(getEnabled(), person.getEnabled());
+        PersonDTO personDTO = (PersonDTO) o;
+        return Objects.equals(getId(), personDTO.getId()) && Objects.equals(getFirstName(), personDTO.getFirstName()) && Objects.equals(getLastName(), personDTO.getLastName()) && Objects.equals(getAddress(), personDTO.getAddress()) && Objects.equals(getGender(), personDTO.getGender()) && Objects.equals(getEnabled(), personDTO.getEnabled());
     }
 
     @Override

@@ -1,13 +1,16 @@
 package br.com.christianfelps.data.dto;
 
-import java.time.LocalDate;
+import org.springframework.hateoas.RepresentationModel;
+
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
-public class BookDTO {
+public class BookDTO extends RepresentationModel<BookDTO> implements Serializable {
     private Long id;
     private String title;
     private String author;
-    private LocalDate launchDate;
+    private Date launchDate;
     private double price;
 
     public BookDTO() {}
@@ -36,11 +39,11 @@ public class BookDTO {
         this.author = author;
     }
 
-    public LocalDate getLaunchDate() {
+    public Date getLaunchDate() {
         return launchDate;
     }
 
-    public void setLaunchDate(LocalDate launchDate) {
+    public void setLaunchDate(Date launchDate) {
         this.launchDate = launchDate;
     }
 
