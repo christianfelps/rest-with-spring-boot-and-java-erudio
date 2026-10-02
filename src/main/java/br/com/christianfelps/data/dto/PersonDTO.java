@@ -1,10 +1,13 @@
 package br.com.christianfelps.data.dto;
 
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 import java.io.Serializable;
 import java.util.Objects;
 
+// Para trocar o nome da lista quando fazemos a requisição de personDTOList para people
+@Relation(collectionRelation = "people")
 public class PersonDTO extends RepresentationModel<PersonDTO> implements Serializable {
 
     private Long id;
@@ -16,7 +19,7 @@ public class PersonDTO extends RepresentationModel<PersonDTO> implements Seriali
 
 
 
-
+    
     public PersonDTO() {}
 
     public Long getId() {
